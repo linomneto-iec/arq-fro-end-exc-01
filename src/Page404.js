@@ -1,5 +1,5 @@
 import './blog.css';
-import Header from './components/header'
+import Header from './components/Header'
 
 function Page404() {
   return (
