@@ -4,7 +4,7 @@ import Header from './components/header'
 function PageHome() {
   return (
     <div className="PageHome">
-      <Header />
+      <Header currentLink="home" />
     </div>
   );
 }

@@ -17,7 +17,8 @@ import {
   NavbarText
 } from 'reactstrap';
 
-function Header() {
+function Header({ currentLink }) {
+  console.log("=======>" + currentLink);
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -29,7 +30,7 @@ function Header() {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/sobre-mim/">Sobre Mim</NavLink>
+              <NavLink className={ currentLink == "aboutMe" ? "font-weight-bold" : "" } href="/sobre-mim/">Sobre Mim</NavLink>
             </NavItem>
             <NavItem>
               <NavLink target="_blank" href="https://github.com/linomneto">GitHub</NavLink>
@@ -44,10 +45,10 @@ function Header() {
       <Jumbotron>
         <Container>
           <Row>
-            <Col className="text-right col-4">
+            <Col className="offset-md-2 col-md-2 col-sm-12 text-center">
               <img src={blogPhoto} className="blog-photo" />
             </Col>
-            <Col className="text-left col-8">
+            <Col className="text-left col-md-6 col-sm-12">
               <h1>Lino Melhado</h1>
               <span>Aluno de pós-graduação em Arquitetura de Software Distribuído pela Pontifícia Universidade Católica de Minas Gerais (PUC MINAS), graduado em Tecnologia em Análise e Desenvolvimento de Sistemas pela Faculdade Estadual de Campinas (UNICAMP).</span>
             </Col>
