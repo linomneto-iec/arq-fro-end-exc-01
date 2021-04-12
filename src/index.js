@@ -1,19 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Home from './Home';
-import Sobre from './Sobre';
+import PageHome from './PageHome';
+import PageAboutMe from './PageAboutMe';
+import Page404 from './Page404';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import pagina404 from './pagina404';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Switch>
-          <Route path="/" exact={true} component={Home} />
-          <Route path="/sobre" component={Sobre} />
-          <Route path="*" component={pagina404} />
+          <Route path="/" exact={true} component={PageHome} />
+          <Route path="/sobre-mim" component={PageAboutMe} />
+          <Route path="*" component={Page404} />
       </Switch>
     </BrowserRouter>
   </React.StrictMode>,
